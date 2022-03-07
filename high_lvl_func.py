@@ -22,6 +22,8 @@ for x in new_bills:
 for name in range(len(names)):
     print(name)
 
+# test
+
 # doubled = map(lambda bill: bill * 2, bills)
 # print(doubled)
 # print(list(doubled))
