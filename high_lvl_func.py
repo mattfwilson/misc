@@ -1,5 +1,4 @@
 bills = [100, 57, 133, 89, 218]
-new_bills = []
 names = ["Molly", "Matt", "Janelle", "Max", "Tim", "Colette", "Brian", "Amanda", "Shawn", "Katie"]
 
 def add_tax(total):
@@ -12,17 +11,18 @@ def add_tip(total):
     new_total = total + tip
     return new_total
 
-for i in range(len(bills)):
-  total = add_tip(bills[i])
-  new_bills.append("Total amount owed is $" + "{:.2f}".format(total) + ". Thank you!")
+def total_bills(func1, func2, list):
+    new_bills = []
+    for i in range(len(list)):
+        tip_and_tax = func1(list[i]) + func2(list[i])
+        total = i + tip_and_tax
+        new_bills.append("Total amount owed is $" + "{:.2f}".format(total))
+    return new_bills
 
-for x in new_bills:
-    print(x)
+tipped_bill = total_bills(add_tip, add_tax, bills)
+for item in tipped_bill:
+    print(item)
 
-for name in range(len(names)):
-    print(name)
-
-# test2!
 
 # doubled = map(lambda bill: bill * 2, bills)
 # print(doubled)
