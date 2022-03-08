@@ -19,9 +19,13 @@ def total_bills(func1, func2, list):
         new_bills.append("Total amount owed is $" + "{:.2f}".format(total))
     return new_bills
 
-tipped_bill = total_bills(add_tip, add_tax, bills)
-for item in tipped_bill:
-    print(item)
+a_in_name = filter(lambda name: "a" not in name, names)
+a_names = list(a_in_name)
+print(a_names)
+
+# tipped_bill = total_bills(add_tip, add_tax, bills)
+# for item in tipped_bill:
+#     print(item)
 
 
 # doubled = map(lambda bill: bill * 2, bills)
