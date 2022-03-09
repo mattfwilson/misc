@@ -1,3 +1,5 @@
+from functools import reduce
+
 bills = [100, 57, 133, 89, 218]
 names = ["Molly", "Matt", "Janelle", "Max", "Tim", "Colette", "Brian", "Amanda", "Shawn", "Katie"]
 
@@ -19,9 +21,12 @@ def total_bills(func1, func2, list):
         new_bills.append("Total amount owed is $" + "{:.2f}".format(total))
     return new_bills
 
-a_in_name = filter(lambda name: "a" not in name, names)
+a_in_name = filter(lambda name: "a" not in name and "l" in name, names)
 a_names = list(a_in_name)
 print(a_names)
+
+reduced_ints = reduce(lambda x,y: x+y, bills)
+print(reduced_ints)
 
 # tipped_bill = total_bills(add_tip, add_tax, bills)
 # for item in tipped_bill:
