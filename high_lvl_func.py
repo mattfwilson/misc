@@ -13,10 +13,15 @@ def add_tip(total):
     new_total = total + tip
     return new_total
 
-def total_bills(func1, func2, list):
+def divide_by_four(total):
+    new_total = total / 4
+    return new_total
+
+def total_bills(func1, func2, func3, list):
     new_bills = []
     for i in range(len(list)):
         tip_and_tax = func1(list[i]) + func2(list[i])
+        divided = func3(tip_and_tax)
         total = i + tip_and_tax
         new_bills.append("Total amount owed is $" + "{:.2f}".format(total))
     return new_bills
