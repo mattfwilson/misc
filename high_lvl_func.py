@@ -21,9 +21,8 @@ def total_bills(func1, func2, func3, list):
     new_bills = []
     for i in range(len(list)):
         tip_and_tax = func1(list[i]) + func2(list[i])
-        divided = func3(tip_and_tax)
-        total = i + divided 
-        new_bills.append("Total amount owed is $" + "{:.2f}".format(total))
+        divided = func3(tip_and_tax) / 4
+        new_bills.append("Total amount owed is $" + "{:.2f}".format(divided))
     return new_bills
 
 totz = total_bills(add_tax, add_tip, divide_by_four, bills)
