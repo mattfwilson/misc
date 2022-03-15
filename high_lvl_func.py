@@ -17,16 +17,17 @@ def divide_by_four(total):
     new_total = total / 4
     return new_total
 
-def total_bills(func1, func2, func3, list):
+def total_bills(func1, func2, func3, list, list2):
     new_bills = []
     for i in range(len(list)):
         tip_and_tax = func1(list[i]) + func2(list[i])
         divided = func3(tip_and_tax) / 4
-        new_bills.append("Total amount owed is $" + "{:.2f}".format(divided))
+    for x in list2:
+        new_bills.append(f"Total amount {x} owes is $" + "{:.2f}".format(divided))
     return new_bills
 
-totz = total_bills(add_tax, add_tip, divide_by_four, bills)
-print(totz)
+name_plus_owed = total_bills(add_tax, add_tip, divide_by_four, bills, names)
+print(name_plus_owed)
 
 a_in_name = filter(lambda name: "a" not in name and "l" in name, names)
 a_names = list(a_in_name)
