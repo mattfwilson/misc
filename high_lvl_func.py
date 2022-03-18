@@ -14,7 +14,8 @@ def add_tip(total):
     return new_total
 
 def divide_by_list(total, total_list):
-    separate_totals = total / len(total_list)
+    amount_of_people = len(total_list)
+    separate_totals = 100 / amount_of_people
     return separate_totals
 
 def total_bills(tax_func, tip_func, dividing, bills, names):
