@@ -21,9 +21,8 @@ def divide_by_list(total, total_list):
 def total_bills(tax_func, tip_func, dividing, bills, names):
     new_bills = []
     tip_and_tax = tax_func(bills) + tip_func(bills)
-    print()
     divided = dividing(tip_and_tax, names)
-    new_bills.append(f" owe a total of $" + "{:.2f}".format(divided))
+    new_bills.append(f"$" + "{:.2f}".format(divided) + " is owed by each person!")
     return new_bills
 
 owed_by_person = total_bills(add_tax, add_tip, divide_by_list, bills, names)
