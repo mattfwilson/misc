@@ -1,21 +1,23 @@
 from functools import reduce
 
-bills = [100, 57, 133, 89, 218]
-names = ["Molly", "Matt", "Janelle", "Max", "Tim", "Colette", "Brian", "Amanda", "Shawn", "Katie", "Misc"]
+TOTAL_PER_PERSON = 0
+BILLS = [100, 57, 133, 89, 218]
+NAMES = ["Molly", "Matt", "Janelle", "Max", "Tim", "Colette", "Brian", "Amanda", "Shawn", "Katie", "Misc"]
 
 def add_tax(total):
-    tax = total * 4
+    tax = total * .4
+    print(tax)
     new_total = total + tax
     return new_total
 
 def add_tip(total):
-    tip = total * 2
+    tip = total * .2
     new_total = total + tip
     return new_total
 
 def divide_by_list(total, total_list):
     amount_of_people = len(total_list)
-    separate_totals = 100 / amount_of_people
+    separate_totals = total / amount_of_people
     return separate_totals
 
 def total_bills(tax_func, tip_func, dividing, bills, names):
@@ -26,8 +28,10 @@ def total_bills(tax_func, tip_func, dividing, bills, names):
         new_bills.append(f"{i} owes {divided}!")
     return new_bills
 
-owed_by_person = total_bills(add_tax, add_tip, divide_by_list, bills, names)
-print(owed_by_person)
+# party_total = input(f'What is your total bill? ')
+
+TOTAL_PER_PERSON = total_bills(add_tax, add_tip, divide_by_list, BILLS, NAMES)
+print(TOTAL_PER_PERSON)
 
 # a_in_name = filter(lambda name: "a" not in name and "l" in name, names)
 # a_names = list(a_in_name)
