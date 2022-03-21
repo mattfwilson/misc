@@ -23,7 +23,7 @@ def total_bills(tax_func, tip_func, dividing, bills, names):
     tip_and_tax = tax_func(bills) + tip_func(bills)
     divided = round(dividing(tip_and_tax, names), 2)
     for i in names:
-        print(f"{i} owes {divided}!")
+        new_bills.append(f"{i} owes {divided}!")
     return new_bills
 
 owed_by_person = total_bills(add_tax, add_tip, divide_by_list, bills, names)
