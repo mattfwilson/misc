@@ -1,7 +1,7 @@
 from functools import reduce
 
 bills = [100, 57, 133, 89, 218]
-names = ["Molly", "Matt", "Janelle", "Max", "Tim", "Colette", "Brian", "Amanda", "Shawn", "Katie"]
+names = ["Molly", "Matt", "Janelle", "Max", "Tim", "Colette", "Brian", "Amanda", "Shawn", "Katie", "Misc"]
 
 def add_tax(total):
     tax = total * 4
@@ -21,8 +21,9 @@ def divide_by_list(total, total_list):
 def total_bills(tax_func, tip_func, dividing, bills, names):
     new_bills = []
     tip_and_tax = tax_func(bills) + tip_func(bills)
-    divided = dividing(tip_and_tax, names)
-    new_bills.append(f"$" + "{:.2f}".format(divided) + " is owed by each person!")
+    divided = round(dividing(tip_and_tax, names), 2)
+    for i in names:
+        print(f"{i} owes {divided}!")
     return new_bills
 
 owed_by_person = total_bills(add_tax, add_tip, divide_by_list, bills, names)
