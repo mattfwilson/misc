@@ -5,7 +5,7 @@ def title_decorator(print_name_func):
     return wrapper
 
 @title_decorator
-def print_name(name, age):
-    print(F"{name} you are {age} years old!")
+def print_name(name, age, hobby):
+    print(F"{name} you are {age} years old who is interested in {hobby}!")
 
-print_name("Janelle", 35)
+print_name("Janelle", 35, "sports")
