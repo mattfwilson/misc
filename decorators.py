@@ -1,7 +1,10 @@
 def title_decorator(print_name_func):
     def wrapper(*args):
         print(f"Hello,")
-        print_name_func(*args)
+        if args == "Janelle":
+            print("lol")
+        else:
+            print_name_func(*args)
     return wrapper
 
 @title_decorator
