@@ -20,35 +20,3 @@ def separate_checks(bill, people):
     add_tax(bill, people)
 
 separate_checks(GRAND_TOTAL, NAMES)
-
-# def add_tax(total):
-#     tax = total * .06
-#     tax_total = total + tax
-#     print(f"Total with tax is {tax_total}")
-#     return tax_total
-
-# def add_tip(total):
-#     tip = total * .2
-#     tip_total = total + tip
-#     print(f"Total with tip is {tip_total}")
-#     return tip_total
-
-# def split_total(total, total_list):
-#     num_people = len(total_list)
-#     split_totals = total / num_people
-#     print(total)
-#     return split_totals
-
-# def total_bills(tax_func, tip_func, dividing, bills, names):
-#     split_bills = []
-#     tip_and_tax = tax_func(bills) + tip_func(bills)
-#     split_checks = round(dividing(tip_and_tax, names), 3)
-#     for name in names:
-#         split_bills.append(f"{name} owes {split_checks}!")
-#     return split_bills
-
-# # party_total = input(f'What is your total bill? ')
-
-# TOTAL_PER_PERSON = total_bills(add_tax, add_tip, split_total, TOTAL_PER_PERSON, NAMES)
-# for person in TOTAL_PER_PERSON:
-#     print(person)
