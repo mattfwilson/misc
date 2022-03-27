@@ -7,16 +7,16 @@ def separate_checks(bill, people):
         tax_total = bill + tax
         print(f"Total with tax is {tax_total}")
         return tax_total
-    def add_tip():
+    def add_tip(bill, people):
         tip = bill * .2
         tip_total = bill * tip
         print(f"Total with tip is {tip_total}")
         return tip_total
-    def split_total():
+    def split_total(bill, people):
         num_people = len(people)
         split_totals = bill / num_people
         print(bill)
         return split_totals
-    add_tax(bill, people)
 
-separate_checks(GRAND_TOTAL, NAMES)
+checks = separate_checks(GRAND_TOTAL, NAMES)
+print(checks)
