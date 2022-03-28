@@ -1,17 +1,16 @@
 class Weapon():
-    weapon_id = 10
-    def __init__(self):
-        self.id = Weapon.weapon_id
-        Weapon.weapon_id += 1
+    def __init__(self, id):
+        self.id = id
 
     def say_id(self):
         print("Weapon id is {}.".format(self.id))
 
-class IceSword(Weapon):
-    pass
+class Sword(Weapon):
+    def __init__(self, dmg_type):
+        self.dmg_type = dmg_type
+        
+    def say_type(self):
+        print("Weapon damage type is {}.".format(self.dmg_type))
 
-weapon1 = IceSword()
-weapon1.say_id()
-
-weapon2 = IceSword()
-weapon2.say_id()
+weapon1 = Sword("Slashing")
+weapon1.say_type()
