@@ -1,3 +1,5 @@
+weaponList =[]
+
 class Weapon():
     def __init__(self, id):
         self.id = id
@@ -13,4 +15,16 @@ class Sword(Weapon):
         print("Weapon damage type is {}.".format(self.dmg_type))
 
 weapon1 = Sword("Slashing")
-weapon1.say_type()
+weaponList.append(weapon1)
+
+weapon2 = Sword("Piercing")
+weaponList.append(weapon2)
+
+weapon3 = Sword("Slapping")
+weaponList.append(weapon3)
+
+for i in weaponList:
+    print(i)
+
+
+
