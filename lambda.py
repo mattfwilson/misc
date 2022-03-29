@@ -1,4 +1,4 @@
-import reduce
+import functools
 
 find_tip = lambda bill: bill * .06 + bill * .2
 print(find_tip(125))
@@ -17,4 +17,5 @@ names = ["mike", "att", "thry", "jonelle", "hptp", "jkjk", "hope", "qwerty", "aw
 no_vowels = filter(lambda name: name[0] == "a" or name == "jkjk" or name != "qwerty", names)
 print(list(no_vowels))
 
-reduced = reduce(lambda name: name)
+lst = [8, 21, 5, 4, 783, 1]
+print(functools.reduce(lambda a, b: a if a > b else b, lst))
