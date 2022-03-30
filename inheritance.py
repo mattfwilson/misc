@@ -10,6 +10,9 @@ class Weapon():
 class Sword(Weapon):
     def __init__(self, dmg_type):
         self.dmg_type = dmg_type
+
+    def __repr__(self):
+        return self.dmg_type
         
     def say_type(self):
         print("Weapon damage type is {}.".format(self.dmg_type))
@@ -20,7 +23,7 @@ weaponList.append(weapon1)
 weapon2 = Sword("Piercing")
 weaponList.append(weapon2)
 
-weapon3 = Sword("Slapping")
+weapon3 = Sword("Clapping")
 weaponList.append(weapon3)
 
 for i in weaponList:
