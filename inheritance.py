@@ -1,11 +1,12 @@
-weaponList =[]
-
 class Weapon():
     def __init__(self, id):
         self.id = id
-
+        
     def say_id(self):
         print("Weapon id is {}.".format(self.id))
+
+    def make_sound(self):
+        print("Whooosh!")
 
 class Sword(Weapon):
     def __init__(self, dmg_type):
@@ -16,6 +17,8 @@ class Sword(Weapon):
         
     def say_type(self):
         print("Weapon damage type is {}.".format(self.dmg_type))
+
+weaponList =[]
 
 weapon1 = Sword("Slashing")
 weaponList.append(weapon1)
@@ -29,5 +32,7 @@ weaponList.append(weapon3)
 for i in weaponList:
     print(i)
 
+weapon2.say_type()
+weapon2.make_sound()
 
 
