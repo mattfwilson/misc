@@ -6,13 +6,14 @@ print(find_tip(125))
 boomed_words = []
 
 def boom(input):
-    uppercase = input.upper()
+    uppercase = input.upper() + " has been boomed!"
     return boomed_words.append(uppercase)
 
 boom("hello")
 boom("lol")
 boom('elden ring')
-print(boomed_words)
+for boomers in boomed_words:
+    print(boomers)
 
 lambda_upper = lambda input: input.upper()
 
