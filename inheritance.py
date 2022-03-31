@@ -17,6 +17,9 @@ class Sword(Weapon):
         
     def say_type(self):
         print("Weapon damage type is {}.".format(self.dmg_type))
+    
+    def swordSound(self):
+        print("Slaaaash!")
 
 weaponList =[]
 
@@ -34,5 +37,8 @@ for i in weaponList:
 
 weapon2.say_type()
 weapon2.make_sound()
+
+weaponList[2].say_type() 
+weaponList[2].make_sound()
 
 
