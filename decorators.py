@@ -7,7 +7,15 @@ def title_decorator(print_name_func):
             print_name_func(*args)
     return wrapper
 
-@title_decorator
+def lol_decorator(lold):
+    def wrapper(*args):
+        if args == "Janelle":
+            print("You are a lol")
+        else:
+            lold(*args)
+    return wrapper
+
+@lol_decorator
 def print_name(name, age, hobby):
     print(F"{name} you are {age} years old who is interested in {hobby}!")
 
