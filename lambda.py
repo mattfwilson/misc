@@ -1,8 +1,5 @@
 import functools
 
-find_tip = lambda bill: bill * .06 + bill * .2
-print(find_tip(125))
-
 boomed_words = []
 
 def boom(input):
@@ -14,6 +11,7 @@ boom("lol")
 boom('elden ring')
 for boomers in boomed_words:
     print(boomers)
+print(f"{len(boomed_words)} words have been boomed.")
 
 lambda_upper = lambda input: input.upper()
 
