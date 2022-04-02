@@ -5,14 +5,14 @@ BILLS = [100, 57, 133, 89, 218]
 NAMES = ["Molly", "Matt", "Janelle", "Max", "Tim", "Colette", "Brian", "Amanda", "Shawn", "Katie", "Misc"]
 
 def add_tax(total):
-    tax = total * .4
+    tax = total[0] * .4
     print(tax)
-    new_total = total + tax
+    new_total = total[0] + tax
     return new_total
 
 def add_tip(total):
-    tip = total * .2
-    new_total = total + tip
+    tip = total[0] * .2
+    new_total = total[0] + tip
     return new_total
 
 def divide_by_list(total, total_list):
