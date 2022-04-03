@@ -19,5 +19,5 @@ names = ["mike", "att", "thry", "jonelle", "hptp", "jkjk", "hope", "qwerty", "aw
 no_vowels = filter(lambda name: name[0] == "a" or name == "jkjk" or name != "qwerty", names)
 print(list(no_vowels))
 
-lst = [8, 21, 5, -101, 4, 783, -51]
-print(functools.reduce(lambda a, b: a if a <= b else b, lst))
+lst = [8, 21, 5, -101, 4, 503, -51, 2]
+print(functools.reduce(lambda a, b: a if a >= b and a > 500 else b, lst))
