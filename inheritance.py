@@ -2,8 +2,8 @@ class Weapon():
     def __init__(self, id):
         self.id = id
         
-    def say_id(self):
-        print("Weapon id is {}.".format(self.id))
+    def say_id(self, id):
+        print("Weapon id is {}.".format(id))
 
     def make_sound(self):
         print("Whooosh!")
@@ -12,11 +12,11 @@ class Sword(Weapon):
     def __init__(self, dmg_type):
         self.dmg_type = dmg_type
         
-    def say_type(self):
-        print("Weapon damage type is {}.".format(self.dmg_type))
+    def say_type(self, dmg_type):
+        print("Weapon damage type is {}.".format(dmg_type))
     
     def sword_sound(self):
-        print("Slaaaash!")
+        return "Slaaaash!"
 
 class IceSword(Sword):
     def __init__(self, element):
@@ -25,11 +25,10 @@ class IceSword(Sword):
     def say_element(self):
         print("Weapon element is {}.".format(self.element))
 
-weaponList =[]
+weapon_roll = IceSword("Ice")
+weapon_roll.say_id(4)
+weapon_roll.say_element()
+weapon_roll.say_type("Slashing")
 
-iced_sword = IceSword("Ice ice baby")
-iced_sword.sword_sound()
-iced_sword.say_element()
-
-print(f"Your weapon sounds like a {iced_sword.sword_sound()}")
+print(f'Your weapon sounds like, "{weapon_roll.sword_sound()}"')
 
