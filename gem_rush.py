@@ -8,9 +8,9 @@ class Stone():
         self.rock_type = type
         self.rarity = rarity
 
-    def roll(type, rarities):
+    def roll(self, type, rarity):
         type_roll = random.choice(type)
-        roll_rarity = random.randint(rarities)
+        roll_rarity = random.randint(rarity)
         return type_roll, roll_rarity
 
 mined_stone = Stone(stone_types, rarities)
