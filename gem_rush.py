@@ -1,18 +1,17 @@
 import random
 
-stone_types = ["Quartz", "Michah", "Limestone", "Granite", "Diamond"]
-rarities = [1, 10]
+stone_types = ["Granite", "Michah", "Quartz", "Limestone", "Diamond"]
+qualities = [1, 100]
 
 class Stone():
-    def __init__(self, type, rarity):
+    def __init__(self, type, quality):
         self.rock_type = type
-        self.rarity = rarity
+        self.rarity = quality
 
-    def roll(self, type, rarity):
+    def roll_type(self, type):
         type_roll = random.choice(type)
-        roll_rarity = random.randint(rarity)
-        return type_roll, roll_rarity
+        return type_roll
 
-mined_stone = Stone(stone_types, rarities)
+mined_stone = Stone(stone_types, qualities)
 print(mined_stone)
 
