@@ -10,16 +10,17 @@ class Stone:
 
     def roll(self):
         stone_types = ["Pebble", "Bronze", "Silver", "Gold", "Platinum", "Diamond", "Moonstone"]
-        bad_luck = stone_types[0]
-        weighted_roll = random.choices(stone_types, weights=[10, 8, 6, 4, 3, 2, 1])
-
-        if weighted_roll[0] == bad_luck:
-            print(f"Roll {self.id}: Bad luck... {weighted_roll}")
-        elif weighted_roll[0] == stone_types[-1]:
-            print(f"Roll {self.id}: You got something amazing! {weighted_roll}")
-        else:
-            print(f"Roll {self.id}: You got something good! {weighted_roll}")
+        weighted_roll = random.choices(stone_types, weights=[10, 8, 6, 4, 3, 2, 10])
+        print(f"Roll {self.id}: {weighted_roll}")
         return weighted_roll
+
+def check_quality(roll_lst):
+    if "Moonstone" in roll_lst:
+        print(f"You found a Moonstone. V rare!")
+    elif "Diamond" in roll_lst:
+        print(f"You found a Diamond. Stellar!")
+    else:
+        print(f"Ehh...")
 
     
 mined_stone1 = Stone().roll()
@@ -30,5 +31,7 @@ mined_stone3 = Stone().roll()
 stone_inv.append(mined_stone3)
 
 print(stone_inv)
+print(check_quality(stone_inv))
+
 
 
