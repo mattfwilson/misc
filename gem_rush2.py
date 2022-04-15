@@ -23,16 +23,17 @@ def check_quality(roll_lst):
         print(f"Ehh...")
 
 mined_stone1 = Stone().roll()
-inventory.append(mined_stone1)
+inventory.append(mined_stone1[0])
 
 mined_stone2 = Stone().roll()
-inventory.append(mined_stone2)
+inventory.append(mined_stone2[0])
 
 mined_stone3 = Stone().roll()
-inventory.append(mined_stone3)
+inventory.append(mined_stone3[0])
 
+print(inventory)
 check = check_quality(inventory)
-print(check)
+
 
 
 
