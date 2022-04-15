@@ -1,6 +1,6 @@
 import random
 
-stone_inv = []
+inventory = []
 
 class Stone:
     create_id = 1
@@ -22,16 +22,17 @@ def check_quality(roll_lst):
     else:
         print(f"Ehh...")
 
-    
 mined_stone1 = Stone().roll()
-stone_inv.append(mined_stone1)
-mined_stone2 = Stone().roll()
-stone_inv.append(mined_stone2)
-mined_stone3 = Stone().roll()
-stone_inv.append(mined_stone3)
+inventory.append(mined_stone1)
 
-print(stone_inv)
-print(check_quality(stone_inv))
+mined_stone2 = Stone().roll()
+inventory.append(mined_stone2)
+
+mined_stone3 = Stone().roll()
+inventory.append(mined_stone3)
+
+check = check_quality(inventory)
+print(check)
 
 
 
