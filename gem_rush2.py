@@ -16,13 +16,13 @@ class Stone:
 
 def check_quality(roll_lst):
     for i in roll_lst:
-        if i == "Moonstone":
+        if i == roll_lst[5:]:
             print(f"You found a {i}. V rare!")
-        elif i == "Diamond":
+        elif i == roll_lst[3:4]:
             print(f"You found a {i}. Dope AF!")
-        elif i == "Platinum" or i == "Gold" or i == "Silver":
+        elif i == roll_lst[1:2]:
             print(f"We'll take a {i}!")
-        else:
+        elif i == roll_lst[0]:
             print(f"{i}... Ehh, not great.")
 
 mined_stone1 = Stone().roll()
