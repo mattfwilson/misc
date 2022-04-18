@@ -16,11 +16,11 @@ class Stone:
 
 def check_quality(roll_lst):
     for i in roll_lst:
-        if i == roll_lst[5:]:
+        if i == roll_lst[5] or i == roll_lst[6]:
             print(f"You found a {i}. V rare!")
-        elif i == roll_lst[3:4]:
+        elif i == roll_lst[3] or i == roll_lst[4]:
             print(f"You found a {i}. Dope AF!")
-        elif i == roll_lst[1:2]:
+        elif i == roll_lst[1] or i == roll_lst == roll_lst[2]:
             print(f"We'll take a {i}!")
         elif i == roll_lst[0]:
             print(f"{i}... Ehh, not great.")
