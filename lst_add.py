@@ -1,13 +1,15 @@
 lst = ['Apple', 'Pear', 'Orange']
-query = 'Apple'
+query = ''
+
+query = input('What do you want to search for? ')
 
 if len(lst) < 10:
     while len(lst) < 10:
-        lst.append('New Fruit')
+        lst.append('Apple')
         print(lst)
     print('List is full!')
     for i in lst:
         if i == query:
-            print(f'Found {query} in your list')
+            print(f'{i} matches your query: {query}')
         else:
-            print(f'No results for {query}')
+            print(f'{i} does not match your query: {query}')
