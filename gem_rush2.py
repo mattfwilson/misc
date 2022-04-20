@@ -16,14 +16,12 @@ class Stone:
 
 def check_quality(roll_lst):
     for i in roll_lst:
-        if i == roll_lst[5] or i == roll_lst[6]:
-            print(f'You found a {i}. V rare!')
-        elif i == roll_lst[3] or i == roll_lst[4]:
-            print(f'You found a {i}. Dope AF!')
-        elif i == roll_lst[1] or i == roll_lst[2]:
-            print(f'We take {i}s!')
+        if i == "Diamond" or i == "Moonstone":
+            print(f'A {i}! Extremely Rare!')
+        elif i == "Silver" or i == "Gold" or i == "Platinum":
+            print(f'{i}. We take those.')
         else:
-            print(f'{i}... Ehh, not great.')
+            print(f'Just a {i}, not great...')
 
 mined_stone1 = Stone().roll()
 inventory.append(mined_stone1[0])
@@ -35,7 +33,7 @@ mined_stone3 = Stone().roll()
 inventory.append(mined_stone3[0])
 
 print(inventory)
-check = check_quality(inventory)
+check_quality(inventory)
 
 
 
