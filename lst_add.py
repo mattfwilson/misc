@@ -1,10 +1,11 @@
-lst = ['Apple', 'Pear', 'Orange', 'Kiwi']
+lst = ['Apple', 'Pear', 'Orange']
 query = ''
 
 query = input('What do you want to search for? ')
+print(lst)
 
 if len(lst) < 20:
-    if "Kiwi" not in lst:
+    if 'Kiwi' not in lst:
         while len(lst) < 10:
             lst.append('Kiwi')
         print('List is full!')
@@ -16,4 +17,4 @@ if len(lst) < 20:
     else:
         while len(lst) < 10:
             lst.append('KIWI')
-            print(lst)
+        print(lst)
