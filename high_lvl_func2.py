@@ -3,19 +3,16 @@ tax = 0
 bill = 0
 
 bill = input('How much is your bill? ')
-tip = input('How much do you want to tip? ')
-tax = input('How much is tax? ')
-
-print(type(tip))
-print(type(tax))
+bill = int(bill)
 
 def total_bill(total, tip_n_tax):
-    return total + tip_n_tax(total)
+    return ("The total amount owed is $" + "{:.2f}".format(total + tip_n_tax(total)))
 
 def tip_tax(bill):
-    tipped = bill * tip
-    taxed = bill * tax
+    tipped = bill * .20
+    taxed = bill * .06
     total = tipped + taxed
     return total
 
 result = total_bill(bill, tip_tax)
+print(result)
