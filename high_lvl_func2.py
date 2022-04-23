@@ -9,9 +9,9 @@ def total_bill(total, tip_n_tax):
     return ("The total amount owed is $" + "{:.2f}".format(total + tip_n_tax(total)))
 
 def tip_tax(bill):
-    tipped = bill * .20
+    gratuity = bill * .20
     taxed = bill * .06
-    total = tipped + taxed
+    total = gratuity + taxed
     return total
 
 result = total_bill(bill, tip_tax)
