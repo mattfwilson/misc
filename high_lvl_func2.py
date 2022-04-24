@@ -5,8 +5,8 @@ bill = 0
 bill = input('How much is your bill? ')
 bill = int(bill)
 
-def total_bill(total, tip_n_tax):
-    return ("The total amount owed is $" + "{:.2f}".format(total + tip_n_tax(total)))
+def total_bill(total, tip_n_tax, state):
+    return ("The total amount owed is $" + "{:.2f}".format(total + tip_n_tax(total) + state))
 
 def tip_tax(bill):
     gratuity = bill * .20
@@ -14,5 +14,10 @@ def tip_tax(bill):
     total = gratuity + taxed
     return total
 
-result = total_bill(bill, tip_tax)
+def state_tax(bill):
+    state = bill * .04
+    state_total = state + bill
+    return state_total
+
+result = total_bill(bill, tip_tax, state_tax)
 print(result)
