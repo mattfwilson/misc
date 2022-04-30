@@ -24,13 +24,13 @@ def check_quality(roll_lst):
             print(f'Just a {i}, not great...')
 
 mined_stone1 = Stone().roll()
-inventory.append(mined_stone1[0])
+inventory.append(mined_stone1)
 
 mined_stone2 = Stone().roll()
-inventory.append(mined_stone2[0])
+inventory.append(mined_stone2)
 
 mined_stone3 = Stone().roll()
-inventory.append(mined_stone3[0])
+inventory.append(mined_stone3)
 
 print(inventory)
 check_quality(inventory)
