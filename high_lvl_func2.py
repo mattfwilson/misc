@@ -22,4 +22,8 @@ def tip_tax(bill, tax, state, tip):
     print('Tip: $' + '{:.2f}'.format(tipped))
     return print('The total amount owed is $' + '{:.2f}'.format(total))
 
+<<<<<<< HEAD
 result = tip_tax(total_bill, fed_percent, state_percent, tip_percent)
+=======
+tip_tax(total_bill, fed_tax, state_tax, tip_percent)
+>>>>>>> 1d85b495baba65201b4fc2899baa1eec93430c8c
