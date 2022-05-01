@@ -15,13 +15,15 @@ class Stone:
         return weighted_roll
 
 def check_quality(roll_lst):
-    for i in roll_lst:
+    for i in roll_lst[0]:
         if i == "Diamond" or i == "Moonstone":
-            print(f'A {i}! Extremely Rare!')
-        elif i == "Silver" or i == "Gold" or i == "Platinum":
-            print(f'{i}. We take those.')
+            return print(f'A {i}! Extremely Rare!')
+        elif i == "Gold" or i == "Platinum":
+            return print(f'{i}. We take those.')
+        elif i == "Bronze" or i == "Silver":
+            return print(f'{i}. Ehhh...')
         else:
-            print(f'Just a {i}, not great...')
+            return print(f'Just a {i}, not great...')
 
 mined_stone1 = Stone().roll()
 inventory.append(mined_stone1)
