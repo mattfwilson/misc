@@ -4,6 +4,7 @@ class Enemy:
     MP = 10
     ATT = 12
     DEF = 7
+    END = 22.6
 
     def __init__(self):
         self.enemy_id = Enemy.ID
@@ -11,13 +12,14 @@ class Enemy:
         self.enemy_mp = Enemy.MP
         self.enemy_att = Enemy.ATT
         self.enemy_def = Enemy.DEF
+        self.enemy_end = Enemy.END
         Enemy.ID += 1
 
     def say_ID(self):
         print("Enemy ID: {}".format(self.enemy_id))
 
     def say_HP_MP(self):
-        print("Enemy HP: {}, MP: {}".format(self.enemy_hp, self.enemy_mp))
+        print("Enemy HP: {}, MP: {}, END: {}".format(self.enemy_hp, self.enemy_mp, self.enemy_end))
     
 e1 = Enemy()
 e1.say_ID()
