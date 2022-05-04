@@ -1,4 +1,13 @@
-class Enemy:
+class Fire:
+    FIRE_DMG = 5
+
+    def __init__(self):
+        self.fire_dmg = Fire.FIRE_DMG
+    
+    def bonusDamage(self):
+        print("Adding {} bonus points of fire damage!".format(self.fire_dmg))
+
+class Enemy(Fire):
     ID = 1
     HP = 50
     MP = 10
@@ -28,6 +37,10 @@ e2 = Enemy()
 e2.say_HP_MP()
 
 e3 = Enemy()
-e3.say_HP_MP
+e3.say_HP_MP()
+
+e4 = Enemy()
+e4.say_HP_MP()
+e4.bonusDamage()
 
 
