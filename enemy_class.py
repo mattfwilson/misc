@@ -1,5 +1,5 @@
 class Enemy():
-    ID = 1
+    ID = 0
     HP = 50
     MP = 10
     ATT = 12
@@ -22,16 +22,20 @@ class Enemy():
     
     def movement(self):
         print("Enemy {} is {}".format(Enemy.ID, Enemy.MOVEMENT))
+        print("Default movement type")
 
 
 class Flying(Enemy):
     MOVEMENT = 'fLying'
 
     def __init__(self):
+        self.enemy_id = Enemy.ID
         self.enemy_movement = Flying.MOVEMENT
+        Enemy.ID += 1
 
     def movement(self):
         print("Enemy {} is {}".format(Enemy.ID, Flying.MOVEMENT))
+        print("Overrided movement type")
     
 e1 = Enemy()
 e1.movement()
