@@ -29,13 +29,14 @@ class Flying(Enemy):
     MOVEMENT = 'fLying'
 
     def __init__(self):
+        # super().__init__(self)
         self.enemy_id = Enemy.ID
         self.enemy_movement = Flying.MOVEMENT
         Enemy.ID += 1
 
     def movement(self):
         print("Enemy {} is {}".format(Enemy.ID, Flying.MOVEMENT))
-        print("Overrided movement type")
+        print("Overrided movement type to {} movement".format(self.MOVEMENT))
     
 e1 = Enemy()
 e1.movement()
