@@ -22,7 +22,6 @@ class Enemy():
     
     def movement(self):
         print("Enemy {} is {}".format(Enemy.ID, Enemy.MOVEMENT))
-        print("Default movement type")
 
 
 class Flying(Enemy):
@@ -36,9 +35,8 @@ class Flying(Enemy):
 
     def movement(self):
         print("Enemy {} is {}".format(Enemy.ID, Flying.MOVEMENT))
-        print("Overrided movement type to {} movement".format(self.MOVEMENT))
 
-class Water(Enemy):
+class Water(Flying):
     MOVEMENT = 'swimming'
 
     def __init__(self):
@@ -47,8 +45,7 @@ class Water(Enemy):
         Enemy.ID += 1
 
     def movement(self):
-        print("Enemy {} is {}".format(Enemy.ID, Water.MOVEMENT))
-        print("Overrided movement type to {} movement".format(self.MOVEMENT))
+        print("Enemy {} is {}".format(Enemy.ID, self.enemy_movement))
     
 e1 = Enemy()
 e1.movement()
