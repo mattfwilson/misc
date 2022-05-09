@@ -31,29 +31,33 @@ class Flying(Enemy):
         # super().__init__(self)
         self.enemy_id = Enemy.ID
         self.enemy_movement = Flying.MOVEMENT
-        Enemy.ID += 1
+
+    def say_ID(self):
+        print("Enemy ID: {}".format(Enemy.ID))
 
     def movement(self):
         print("Enemy {} is {}".format(Enemy.ID, Flying.MOVEMENT))
 
-class Water(Flying):
+class Water(Enemy):
     MOVEMENT = 'swimming'
 
     def __init__(self):
         self.enemy_id = Enemy.ID
         self.enemy_movement = Water.MOVEMENT
-        Enemy.ID += 1
+
+    def say_ID(self):
+        print("Enemy ID: {}".format(Enemy.ID))
 
     def movement(self):
         print("Enemy {} is {}".format(Enemy.ID, self.enemy_movement))
     
 e1 = Enemy()
-e1.movement()
-
 e2 = Flying()
-e2.movement()
-
 e3 = Water()
-e3.movement()
+
+enemies = [e1, e2, e3]
+for i in enemies:
+    i.say_ID()
+    i.movement()
 
 
