@@ -1,21 +1,20 @@
 class Enemy():
+    id = 1
 
     def __init__(self):
-        self.enemy_id = 0
+        self.enemy_id = Enemy.id
         self.enemy_type = 'Normal'
-        self.enemy_hp = 50
-        self.enemy_id += 1
-    
+        self.enemy_hp = 100
+        Enemy.id += 1
+
     def say_type(self):
-        print("Enemy {} is {} type".format(self.enemy_id, self.enemy_type))
+        print("Enemy {} is type {} and has {} HP.".format(self.enemy_id, self.enemy_type, self.enemy_hp))
 
 class Fire(Enemy):
-
     def __init__(self):
         self.enemy_type = 'Fire'
 
 class Water(Enemy):
-
     def __init__(self):
         self.enemy_type = 'Water'
     
