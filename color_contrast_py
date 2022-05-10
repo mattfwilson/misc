@@ -1,0 +1,14 @@
+
+raceColor = { # color we get back from RR
+    hue: 222,
+    saturation: 40,
+    brightness: 100
+}
+
+if raceColor['saturation'] < 40:
+    darkColor = raceColor['saturation']: 80 
+    darkColor = raceColor['brightness']: 40
+    return darkColor
+
+elif raceColor['saturation'] >= 40:
+    return foregroundColor # DS white color
