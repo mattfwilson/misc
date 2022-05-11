@@ -20,5 +20,5 @@ e2 = Fire("Noob", 1)
 
 print(e1.say_type())
 print(e2.say_type())
-# print(help(e1))
+print(help(e1))
 
