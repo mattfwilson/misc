@@ -2,11 +2,12 @@ import random
 
 computer_roll = ''
 player_roll = ''
+throws = ['Rock', 'Scissors', 'Paper']
 
 player_roll = input('What do you want to throw: [R] Rock, [P] Paper, or [S] Scissors? ')
 
 def comp_roll():
-    roll = random.choices('Rock', 'Paper', 'Scissors')
+    roll = random.choices(throws)
     return roll
 
 computer_roll = comp_roll()
