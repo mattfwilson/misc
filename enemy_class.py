@@ -9,13 +9,19 @@ class Enemy:
     def say_type(self):
         print("Enemy {} is type {} and has {} HP.".format(self.id, self.enemy_type, self.enemy_hp))
 
-class Fire(Enemy):
+class Boss(Enemy):
+
+    def __init__(self)
+        super.__init__(self, type, hp)
+        self.enemy_hp += 100
+
+
     def say_type(self):
         print("Enemy {} is type {} and has {} HP.".format(self.id, self.enemy_type, self.enemy_hp))
 
     
 e1 = Enemy("Flying", 50)
-e2 = Fire("Noob", 1)
+e2 = Boss("Megaboss", 1)
 
 
 print(e1.say_type())
