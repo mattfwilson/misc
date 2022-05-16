@@ -19,25 +19,25 @@ class Boss(Enemy):
     def say_type(self):
         print("Boss {} is type {} and has {} HP.".format(self.id, self.enemy_type, self.enemy_hp * 2))
 
-# class Megaboss(Enemy):
-#     def __init__(self, enemy_type, enemy_hp, megaboss_hp, underlings=None):
-#         super().__init__(enemy_type, enemy_hp, megaboss_hp)
-#         if underlings == None:
-#             self.power = []
-#         else:
-#             self.power = underlings
+class Megaboss(Enemy):
+    def __init__(self, enemy_type, enemy_hp, megaboss_hp, underlings=None):
+        super().__init__(enemy_type, enemy_hp)
+        if underlings == None:
+            self.underlings = []
+        else:
+            self.underlings = underlings
     
-#     def add_underling(self, underling):
-#         if underling not in self.underlings:
-#             self.underlings.append(underling)
+    def add_underling(self, underling):
+        if underling not in self.underlings:
+            self.underlings.append(underling)
 
-#     def remove_underling(self, underling):
-#         if underling in self.underlings:
-#             self.underlings.remove(underling)
+    def remove_underling(self, underling):
+        if underling in self.underlings:
+            self.underlings.remove(underling)
 
-#     def print_underlings(self):
-#         for und in self.underlings:
-#             print('-->', und.enemy_type)
+    def print_underlings(self):
+        for underling in self.underlings:
+            print('Underling id', underling.id)
 
 
 e1 = Enemy('Normal', 50)
@@ -45,8 +45,9 @@ e1.say_type()
 
 e2 = Boss('Boss', 50, 4)
 e2.say_type()
-# e2 = Megaboss('Ice', 50, 100)
 
-print(e1)
+e3 = Megaboss('Ice', 50, 100)
+e3.add_underling(e2)
+e3.print_underlings()
 
 
