@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-def coin_flip_experiment():
+def die_roll_experiment():
   # defining our two dies
     die1 = [1, 2, 3, 4, 5, 6]
     die2 = [1, 2, 3, 4, 5, 6]
@@ -16,21 +16,21 @@ def coin_flip_experiment():
     else:
         return 0
  
-num_trials = 5000
+num_trials = 1000
 prop = []
-tosses = []
+rolls = []
 snake_eyes = 0
  
-for toss in range(num_trials):
-    snake_eyes += coin_flip_experiment()
-    prop.append(snake_eyes/(toss+1))
-    tosses.append(toss+1)
+for roll in range(num_trials):
+    snake_eyes += die_roll_experiment()
+    prop.append(snake_eyes/(roll+1))
+    rolls.append(roll+1)
  
-plt.plot(tosses, prop, label='Experimental Probability')
+plt.plot(rolls, prop, label='Experimental Probability')
 plt.xlabel('Number of Tosses')
 plt.ylabel('Percentage of Snake Eyes')
 
-plt.hlines(0.25, 0, num_trials, colors='purple', label='True Probability')
+plt.hlines(0.0277, 0, num_trials, colors='red', label='True Probability of Snake Eyes')
 plt.legend()
 
 plt.show()
