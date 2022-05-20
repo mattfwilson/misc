@@ -1,11 +1,10 @@
-import matplotlib.pyplot
 import matplotlib.pyplot as plt
 import numpy as np
 
 def coin_flip_experiment():
   # defining our two coins as lists
-  coin1 = ['Heads', 'Tails']
-  coin2 = ['Heads', 'Tails']
+  coin1 = ['Heads', 'Tails', 'Hails']
+  coin2 = ['Heads', 'Tails', 'Hails']
  
   # "flipping" both coins randomly
   coin1_result = np.random.choice(coin1)
@@ -18,7 +17,7 @@ def coin_flip_experiment():
     return 0
  
 # how many times we run the experiment
-num_trials = 1000
+num_trials = 2500
 prop = []
 flips = []
 # keep track of the number of times heads pops up twice
@@ -36,7 +35,7 @@ for flip in range(num_trials):
 # plot all flips and proportion of two heads
 plt.plot(flips, prop, label='Experimental Probability')
 plt.xlabel('Number of Flips')
-plt.ylabel('Proportion of Two Heads')
+plt.ylabel('Percentage of Two Heads')
 
 plt.hlines(0.25, 0, num_trials, colors='purple', label='True Probability')
 plt.legend()
