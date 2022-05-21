@@ -1,6 +1,8 @@
 import random
 
 FLIPS = 1000
+COIN1 = ['Heads', 'Tails']
+COIN2 = ['Heads', 'Tails']
 OUTCOMES = ['HH', 'TT', 'HT', 'TH']
 RESULTS = []
 
