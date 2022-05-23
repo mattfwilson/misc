@@ -1,8 +1,9 @@
-import random
 import matplotlib.pyplot as plt
 import numpy as np
 
-FLIPS = 1000
+fig = plt.figure(figsize=(20, 12))
+
+FLIPS = 5000
 TWO_HEADS = 0
 PROB = []
 RESULTS = []
@@ -28,9 +29,8 @@ plt.plot(RESULTS, PROB, label='Experimental Probability')
 plt.xlabel('Number of Tosses')
 plt.ylabel('Percentage of Two Heads')
 
-plt.hlines(0.25, 0, FLIPS, colors='red', label='True Probability of Two Heads')
+plt.hlines(.25, 0, FLIPS, colors='red', label='True Probability of Two Heads')
 plt.legend()
-
 plt.show()
 
 
