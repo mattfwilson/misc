@@ -4,7 +4,7 @@ import numpy as np
 def coin_flip_experiment():
   # defining our two coins as lists
   coin1 = ['Heads', 'Tails', 'Hails']
-  coin2 = ['Heads', 'Tails', 'Hails']
+  coin2 = ['Heads', 'Tails', 'Hails' 'LOL']
  
   # "flipping" both coins randomly
   coin1_result = np.random.choice(coin1)
