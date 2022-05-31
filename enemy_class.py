@@ -1,5 +1,5 @@
 class Enemy:
-    id = 1
+    id = 0
 
     def __init__(self, enemy_type, enemy_hp):
         self.enemy_type = enemy_type
