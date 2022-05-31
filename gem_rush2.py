@@ -43,5 +43,10 @@ inventory.append(mined_stone3)
 print(inventory)
 check_quality(inventory)
 
+reroll = input('Roll again? ')
+if reroll == 'y':
+    mined_stone4 = Stone().roll()
+else:
+    print('You are done rolling!')
 
 
