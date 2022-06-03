@@ -1,6 +1,6 @@
 import random
 
-rolls = 10
+rolls = 5
 inventory = []
 
 class Stone:
@@ -50,6 +50,8 @@ while rolls > 0:
         mined_stone4 = Stone().roll()
         rolls -= 1
         print(rolls)
+    elif rolls == 0:
+        print('You do not have any more rerolls!')
     else:
         print('You are done rolling!')
 
