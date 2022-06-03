@@ -1,5 +1,6 @@
 import random
 
+rolls = 10
 inventory = []
 
 class Stone:
@@ -43,10 +44,12 @@ inventory.append(mined_stone3)
 print(inventory)
 check_quality(inventory)
 
-while 0 > 1:
+while rolls > 0:
     reroll = input('Roll again? ')
     if reroll == 'y':
         mined_stone4 = Stone().roll()
+        rolls -= 1
+        print(rolls)
     else:
         print('You are done rolling!')
 
