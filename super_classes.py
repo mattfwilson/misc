@@ -1,3 +1,5 @@
+cubeVolume = 2
+
 class Rectangle:
     def __init__(self, length, width):
         self.length = length
@@ -16,10 +18,15 @@ class Cube(Rectangle):
         self.height = height
     
     def volume(self):
-        return self.length * self.width * self.height
+        cubeVolume = self.length * self.width * self.height
+        return cubeVolume
+    
+    def volumeX2(self, volume):
+        volDoubled = volume * 2
+        return volDoubled
 
 square1 = Square(8, 5)
 print(square1.area())
 
 cube1 = Cube(2, 4, 6)
-print(cube1.volume())
+print(cube1.volumeX2(cubeVolume))
