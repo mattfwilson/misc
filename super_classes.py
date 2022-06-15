@@ -16,6 +16,13 @@ class Cube(Rectangle):
     def printColor(self):
         return self.color
 
-cube1 = Cube(2, 4, 6)
-print(f'Your {cube1.color} cube has a length of {cube1.length}, width of {cube1.width}, and a height of {cube1.height}.')
-print(f'The volume of your cube is {cube1.volume()}.')
+cube1 = Cube(2, 4, 6, 'sky blue')
+
+if cube1.color == "sky blue":
+    print(f'Your {cube1.color} cube has a length of {cube1.length}, width of {cube1.width}, and a height of {cube1.height}.')
+    print(f'The volume of your cube is {cube1.volume()}.')
+else:
+    print(f'Your cube has no specified color but has a length of {cube1.length}, width of {cube1.width}, and a height of {cube1.height}.')
+    print(f'The volume of your cube is {cube1.volume()}.')
+
+
