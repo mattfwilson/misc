@@ -6,6 +6,22 @@ class Enemy:
         self.enemy_hp = enemy_hp
         self.id += 1
 
+    @property
+    def hp(self):
+        """Docstring for the 'enemy_hp' property"""
+        return self.__enemy_hp
+
+    @enemy_hp.setter
+    def setHP(self, enemy_hp):
+        if enemy_hp <= 10:
+            self.__enemy_hp = 10
+        return self.enemy_hp
+    
+    @enemy_hp.deleter
+    def resetHP(self, enemy_hp):
+        if enemy_hp == 0:
+            self.__enemy_hp = 0
+
     def say_type(self):
         print("Enemy {} is type {} and has {} HP.".format(self.id, self.enemy_type, self.enemy_hp))
 
