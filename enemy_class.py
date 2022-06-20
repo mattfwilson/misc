@@ -7,20 +7,18 @@ class Enemy:
         self.id += 1
 
     @property
-    def HP(self):
+    def health(self):
         """Docstring for the 'enemy_hp' property"""
         return self.__enemy_hp
 
-    @HP.setter
-    def HP(self, enemy_hp):
+    @health.settter
+    def health(self, enemy_hp):
         if enemy_hp <= 10:
             self.__enemy_hp = 10
-        return self.enemy_hp
     
-    @HP.deleter
-    def HP(self, enemy_hp):
-        if enemy_hp == 0:
-            self.__enemy_hp = 0
+    @health.deleter
+    def health(self):
+        del self__enemy_hp
 
     def say_type(self):
         print("Enemy {} is type {} and has {} HP.".format(self.id, self.enemy_type, self.enemy_hp))
@@ -65,5 +63,6 @@ e2.say_type()
 e3 = Megaboss('Ice', 50, 100)
 e3.add_underling(e2)
 e3.print_underlings()
+
 
 
