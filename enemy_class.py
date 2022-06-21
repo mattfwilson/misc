@@ -1,5 +1,7 @@
 import itertools
 
+enemyPool = []
+
 class Enemy:
     newid = itertools.count().__next__
 
@@ -7,6 +9,7 @@ class Enemy:
         self.newid = Enemy.newid()
         self.enemy_type = enemy_type
         self.enemy_hp = enemy_hp
+        enemyPool.append(self)
 
     @property
     def health(self):
@@ -23,6 +26,9 @@ class Enemy:
 
     def say_type(self):
         print("Enemy {} is type {} and has {} HP.".format(self.newid, self.enemy_type, self.enemy_hp))
+    
+    def __repr__(self):
+        return '{}'.format(self.newid)
 
 class Boss(Enemy):
 
@@ -61,4 +67,4 @@ print(e0.say_type())
 e1 = Enemy('water', 47)
 print(e1.say_type())
 
-
+print(enemyPool)
