@@ -67,4 +67,9 @@ print(e0.say_type())
 e1 = Enemy('water', 47)
 print(e1.say_type())
 
+e3 = Enemy('earth', 1769)
+print(e3.say_type())
+
 print(enemyPool)
+for i in enemyPool:
+    print(i)
