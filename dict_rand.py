@@ -18,10 +18,13 @@ locations = {
     },
 }
 
-def bestFood(**kwargs):
-    print(kwargs['city'] + ' has the best ' + kwargs['cuisine'] + ' food.')
+def bestCuisine(**kwargs):
+    print(kwargs['City'] + ' has a ' + kwargs['Rating'] + '/100 rated ' + kwargs['Cuisine'] + ' restaurant!')
+    for key, value in kwargs.items():
+        print(f'{key} = {value}')
 
-bestFood(city='New York City', cuisine='Lebanese')
+
+bestCuisine(City='New York City', Cuisine='Lebanese', Rating='94')
 
 # rand_items = random.choice(list(locations.items()))
 # rand_keys = random.choice(list(locations.keys()))
