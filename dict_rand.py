@@ -1,5 +1,3 @@
-import random
-
 locations = {
     'Boston': {
         'Japanese': 7,
@@ -13,9 +11,9 @@ locations = {
     },
     'San Francisco': {
         'Japanese': 21,
-        'Mexican': 32,
+        'Mexican': 29,
         'Irish': 11,
-    },
+    }
 }
 
 def bestCuisine(**kwargs):
@@ -23,8 +21,14 @@ def bestCuisine(**kwargs):
     for key, value in kwargs.items():
         print(f'{key} = {value}')
 
-
+def searchCuisine(query):
+    if query in locations:
+        print(f'{query} found in dictionary!')
+    else:
+        print('No results found.')
+        
 bestCuisine(City='New York City', Cuisine='Lebanese', Rating='94')
+searchCuisine('Japanese')
 
 # rand_items = random.choice(list(locations.items()))
 # rand_keys = random.choice(list(locations.keys()))
