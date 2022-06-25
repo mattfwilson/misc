@@ -63,16 +63,16 @@ class Megaboss(Enemy):
 
 
 e0 = Enemy('Fire', 55)
-print(e0.say_type())
+e0.say_type()
 
 e1 = Enemy('Water', 47)
-print(e1.say_type())
+e1.say_type()
 
 e3 = Enemy('Earth', 1769)
-print(e3.say_type())
+e3.say_type()
 
 boss1 = Boss('Normal', 250)
-print(boss1.say_type())
+boss1.say_type()
 
 
 print(enemyPool)
