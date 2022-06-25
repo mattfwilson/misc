@@ -1,11 +1,23 @@
 import functools
+import random
 
-nums = [0, 1, 475, 5, 4, 3, 20, 86, 21, 7]
-largest = []
+nums = []
+length = 10
+largest = 0
+
+for i in range(length):
+    randNum = random.randint(0, 100)
+    nums.append(randNum)
+
+def findEvens():
+    evens = list((filter(lambda x: x % 2 == 0, nums)))
+    print(nums)
+    print(f'Even numbers: {evens}')
 
 def findLargest():
-    result = list((filter(lambda x: x % 2 == 0, nums)))
-    for i in result:
-        print(i)
+    largest = functools.reduce(lambda a, b: a if a > b else b, nums)
+    print(nums)
+    print(f'Largest number: {largest}')
 
+findEvens()
 findLargest()
