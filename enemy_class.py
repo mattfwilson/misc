@@ -32,13 +32,14 @@ class Enemy:
 
 class Boss(Enemy):
 
-    def __init__(self, enemy_type, enemy_hp, boss_hp):
+    def __init__(self, enemy_type, enemy_hp):
         super().__init__(enemy_type, enemy_hp)
-        self.boss_hp = boss_hp
-        boss_health = enemy_hp + self.boss_hp
+        self.newid = Enemy.newid()
+        self.boss_hp_buff = 1.5
+        self.boss_hp = enemy_hp * self.boss_hp_buff
 
     def say_type(self):
-        print("Boss {} is type {} and has {} HP.".format(self.id, self.enemy_type, self.enemy_hp))
+        print("Boss {} is type {} and has {} HP.".format(self.newid, self.enemy_type, self.boss_hp))
 
 class Megaboss(Enemy):
     def __init__(self, enemy_type, enemy_hp, megaboss_hp, underlings=None):
@@ -61,14 +62,18 @@ class Megaboss(Enemy):
             print('Underling id', underling)
 
 
-e0 = Enemy('flying', 55)
+e0 = Enemy('Fire', 55)
 print(e0.say_type())
 
-e1 = Enemy('water', 47)
+e1 = Enemy('Water', 47)
 print(e1.say_type())
 
-e3 = Enemy('earth', 1769)
+e3 = Enemy('Earth', 1769)
 print(e3.say_type())
+
+boss1 = Boss('Normal', 250)
+print(boss1.say_type())
+
 
 print(enemyPool)
 for i in enemyPool:
