@@ -2,7 +2,7 @@ import functools
 import random
 
 nums = []
-length = 10
+length = 25
 largest = 0
 
 for i in range(length):
