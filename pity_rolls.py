@@ -1,26 +1,39 @@
 import random
+import time
 
-COUNT = 50
-ROLL_POOL = []
+NUM_ROLLS = 0
+COUNTER = 10
+POOL = []
+RARITIES = ['Common', 'Uncommon', 'Rare', 'Epic', 'Legendary']
 
 def roll():
-    rarities = ['Common', 'Uncommon', 'Rare', 'Epic', 'Legendary']
-    result = random.choices(rarities, weights=[15, 11, 8, 5, 2])
+    result = random.choices(RARITIES, weights=[15, 12, 8, 4, 2])
+    POOL.append(result[0])
+    print(f'You obtained a {result[0]} item!')
     return result[0]
 
-for i in range(COUNT):
-    ROLL_POOL.append(roll())
+def pity_roll():
+    result = random.choices(RARITIES, weights=[0, 0, 0, 0, 1])
+    return result[0]
 
-print(ROLL_POOL)
+def summary():
+    common = POOL.count(RARITIES[0])
+    print(f'Common: {common}')
+    uncommon = POOL.count(RARITIES[1])
+    print(f'Uncommon: {uncommon}')
+    rare = POOL.count(RARITIES[2])
+    print(f'Rare: {rare}')
+    epic = POOL.count(RARITIES[3])
+    print(f'Epic: {epic}')
+    legendary = POOL.count(RARITIES[4])
+    print(f'Legendary: {legendary}')
 
-common = ROLL_POOL.count('Common')
-print(f'Common: {common}')
-uncommon = ROLL_POOL.count('Uncommon')
-print(f'Uncommon: {uncommon}')
-rare = ROLL_POOL.count('Rare')
-print(f'Rare: {rare}')
-epic = ROLL_POOL.count('Epic')
-print(f'Epic: {epic}')
-legendary = ROLL_POOL.count('Legendary')
-print(f'Legendary: {legendary}')
-
+while True:
+    option = input('What do you want to do? [roll/inv/count] ')
+    if option == 'roll':
+        roll()
+        NUM_ROLLS += 1
+    elif option == 'inv':
+        summary()
+    elif option == 'count':
+        print(f'You have rolled {NUM_ROLLS} times.')
