@@ -1,26 +1,22 @@
 BAR = '='
-PROGRESS = 100
-SPACE = 0
+CURRENT = 100
+MAX_BAR = 100
+SPACER = 0
 AMOUNT = 0
 
 while True:
-    print(f'\nHP: {PROGRESS}/100')
-    print('[ ' + BAR * PROGRESS + SPACE * ' ' + ' ]')
-    move = input('\nAdd or subtract from bar? ')
+    print(f'\nHP: {CURRENT}/{MAX_BAR}')
+    print('[' + BAR * CURRENT + SPACER * ' ' + ']')
+    AMOUNT = int(input('\nAdd or subtract from bar: '))
 
-    if move == "Add":
-        AMOUNT = int(input('Add how much: '))
-        total = AMOUNT + PROGRESS
-        if total > 100:
-            print(f'Adding {AMOUNT} would exceed your max HP!')
+    total = AMOUNT + CURRENT
+    if total > MAX_BAR:
+        print(f'Adding {AMOUNT} would exceed your max!')
+    elif total <= 0:
+        print(f'Subtracting {AMOUNT} would deplete your HP to 0!')
+    else:
+        CURRENT += AMOUNT
+        if AMOUNT < 0:
+            SPACER += abs(AMOUNT)
         else:
-            PROGRESS += AMOUNT
-            SPACE -= AMOUNT
-    elif move == "Sub":
-        AMOUNT = int(input('Subtract how much: '))
-        total = PROGRESS - AMOUNT
-        if total <= 0:
-            print(f'Subtracting {AMOUNT} would deplete your HP to 0!')
-        else:
-            PROGRESS -= AMOUNT
-            SPACE += AMOUNT
+            SPACER -= abs(AMOUNT)
