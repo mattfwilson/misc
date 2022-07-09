@@ -1,12 +1,12 @@
-BAR = '='
-CURRENT = 100
-MAX_BAR = 100
+BAR = '🟩'
+CURRENT = 25
+MAX_BAR = 25
 SPACER = 0
 AMOUNT = 0
 
 while True:
     print(f'\nHP: {CURRENT}/{MAX_BAR}')
-    print('[' + BAR * CURRENT + SPACER * ' ' + ']')
+    print(BAR * CURRENT + SPACER * ' ')
     try:
         AMOUNT = int(input('\nAdd or subtract from bar: '))
         total = AMOUNT + CURRENT
@@ -21,4 +21,4 @@ while True:
             else:
                 SPACER -= abs(AMOUNT)
     except ValueError:
-        print('[!] You must input a number.')
+        print('You must input a number.')
